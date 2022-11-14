@@ -1,0 +1,6 @@
+<circuit type="simulide_0.1">
+ 
+atmega32-1: 
+<item Mhz="16" objectName="atmega32-1" labely="-20" id="atmega32-1" program="" valLabRot="0" Show_id="true" rotation="0" itemtype="AVR" y="-468" x="-428" labelx="0" labelrot="0" valLabely="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+</circuit>
