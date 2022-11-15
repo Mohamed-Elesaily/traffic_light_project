@@ -1,6 +1,18 @@
 <circuit type="simulide_0.1">
  
+Led-4: 
+<item threshold="2.4" Resistance="0.6" rotation="0" valLabRot="0" objectName="Led-4" id="Led-4" labelx="-16" valLabelx="0" Show_id="false" MaxCurrent="0.03" Grounded="false" labely="-24" itemtype="Led" labelrot="0" y="-476" x="-276" vflip="1" hflip="1" valLabely="0" Color="0"/>
+ 
+Ground (0 V)-2: 
+<item objectName="Ground (0 V)-2" labely="-24" id="Ground (0 V)-2" valLabRot="0" Show_id="false" rotation="0" itemtype="Ground" y="-380" x="-260" labelx="-16" labelrot="0" valLabely="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
 atmega32-1: 
-<item Mhz="16" objectName="atmega32-1" labely="-20" id="atmega32-1" program="" valLabRot="0" Show_id="true" rotation="0" itemtype="AVR" y="-468" x="-428" labelx="0" labelrot="0" valLabely="0" vflip="1" hflip="1" valLabelx="0"/>
+<item Mhz="16" objectName="atmega32-1" labely="-20" id="atmega32-1" program="mohamed/fwd/traffic_light/main.hex" valLabRot="0" Show_id="true" rotation="0" itemtype="AVR" y="-468" x="-428" labelx="0" labelrot="0" valLabely="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+Connector-5: 
+<item endpinid="atmega32-1-PA0" rotation="0" valLabRot="0" pointList="-292,-476,-372,-476,-372,-460" objectName="Connector-5" id="Connector-5" labelx="-16" startpinid="Led-4-lPin" valLabelx="0" Show_id="false" labely="-24" itemtype="Connector" labelrot="0" y="-476" enodeid="enode-5" x="-292" vflip="1" hflip="1" valLabely="0"/>
+ 
+Connector-6: 
+<item endpinid="Ground (0 V)-2-Gnd" rotation="0" valLabRot="0" pointList="-260,-476,-260,-396" objectName="Connector-6" id="Connector-6" labelx="-16" startpinid="Led-4-rPin" valLabelx="0" Show_id="false" labely="-24" itemtype="Connector" labelrot="0" y="-476" enodeid="enode-6" x="-260" vflip="1" hflip="1" valLabely="0"/>
  
 </circuit>
