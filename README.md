@@ -1,4 +1,4 @@
 # architecture
-![](design/architecture.png)
-Architecture is divided into 5 layers:
-1- microcontroller 
+![](design/architecture.png)<br />
+Architecture is divided into 5 layers:<br />
+1- micro-controller: prephiral that used from micro-controller <br />
