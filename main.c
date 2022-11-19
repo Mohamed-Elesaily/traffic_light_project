@@ -1,12 +1,19 @@
-#include"GPIO.h"
+#include"Application/App.h"
 #include"STD_lib.h"
-#include <util/delay.h>
 int main(){
-    DIO_direction(DDRA,PIN0,OUT);
+   app_init();
+   traffic_start();
+
     while(1){
-        DIO_toggle(PORTA,PIN0);
-        _delay_ms(100000);
-        
+      app_start();
     }
 return 0;
+}
+
+
+ISR(INT0_vect)
+{
+
+ button_s = Pressed;
+
 }
