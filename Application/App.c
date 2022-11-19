@@ -113,11 +113,7 @@ case p_3: // car yellow on
     _delay_ms(50000);
     next_state = p_4;
     break;
-case p_4: // car yellow on
-    pedestrian_light(Red);
-    traffic_light(Green);
-    _delay_ms(50000);
-
+case p_4: 
     traffic_start();
     next_state = green;
     S_state_next = normal;
