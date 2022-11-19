@@ -9,3 +9,10 @@ Architecture is divided into 5 layers:<br />
 
 # State_machine
 ![](design/state_machine.png)<br />
+I divided the state machine into two super state: <br/>
+normal mode: <br/>
+In normal mode traffic light blinking normally from green to red and vise versa until pedestrian button is pressed. The transition while be occured  is depending on state of the normal. for example if I in green state then button is pressed, the transition while be P_2. <br/>
+pedestrian mode:
+In pedestrian mode after each state is finished it will go to P_4 state to go to normal mode again
+
+
