@@ -5,6 +5,9 @@
 #include"../HAL/LED.h"
 #include"../HAL/Button.h"
 #include"../MCAL/INT.h"
+
+#define TIME 5000
+
 typedef enum EN_STATE{
  green,yellow,red,p_1,p_2,p_3,p_4
 }EN_STATE;

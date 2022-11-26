@@ -2,6 +2,7 @@
 #define GPIO_H
 #include "../STD/types.h"
 #include "../STD/STD_lib.h"
+#include <util/delay.h>
 // PORTA
 #define PORT_A ((volatile uint8_t *)(0x3B))
 #define DDR_A ((volatile uint8_t *)(0x3A))
@@ -35,4 +36,7 @@ uint8_t DIO_read(volatile uint8_t* PORT,uint8_t PIN);
 void DIO_write(volatile uint8_t* PORT,uint8_t PIN, uint8_t value);
 void DIO_toggle(volatile uint8_t* PORT,uint8_t PIN);
 void DIO_direction(volatile uint8_t* DDR,uint8_t PIN, uint8_t value);
+
+void DIO_OUT_UT();
+void DIO_IN_UT();
 #endif

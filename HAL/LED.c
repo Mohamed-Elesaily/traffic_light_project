@@ -37,3 +37,16 @@ void LED_toggle(EN_LED LED){
     else if(LED == Y_d) DIO_toggle(PORT_B,PIN1);
     else if(LED == R_d) DIO_toggle(PORT_B,PIN2);
 }
+
+
+void LED_Test(){
+    LED_init();
+    LED_on(G_d);
+    _delay_ms(1000);
+    LED_off(G_d);
+    _delay_ms(1000);
+    LED_toggle(G_d);
+    _delay_ms(1000);
+    LED_toggle(G_d);
+    _delay_ms(1000);
+}

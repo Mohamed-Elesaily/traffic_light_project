@@ -35,11 +35,11 @@ void normal_state(){
 {
 case green:
     traffic_light(green);
-    _delay_ms(50000);
+    _delay_ms(TIME);
     next_state = yellow; 
      prev_state = green;
     if(button_s == Pressed){
-        _delay_ms(1000);
+        _delay_ms(100);
         next_state = p_2;
         button_s = Not_Pressed;
         S_state_next = pedestrian;
@@ -47,7 +47,7 @@ case green:
     break;
 case yellow:
     traffic_light(yellow);
-    _delay_ms(50000);
+    _delay_ms(TIME);
     if(prev_state == red){
         next_state = green; 
      
@@ -58,7 +58,7 @@ case yellow:
     }
     prev_state = yellow;
     if(button_s == Pressed){
-        _delay_ms(1000);
+        _delay_ms(100);
         next_state = p_3;
         button_s = Not_Pressed;
         S_state_next = pedestrian;
@@ -66,11 +66,11 @@ case yellow:
     break;
 case red:
     traffic_light(red);
-    _delay_ms(50000);
+    _delay_ms(TIME);
     next_state = yellow; 
     prev_state = red;
     if(button_s == Pressed){
-         _delay_ms(1000);  
+         _delay_ms(100);  
         next_state = p_1;
         button_s = Not_Pressed;
         S_state_next = pedestrian;
@@ -88,29 +88,29 @@ switch (state)
 {
 case p_1: //car red one
     pedestrian_light(Green);
-     _delay_ms(50000);
+     _delay_ms(TIME);
      next_state = p_4;
     break;
 case p_2: // car green on
     pedestrian_light(Red);
-     _delay_ms(50000);
+     _delay_ms(TIME);
      pedestrian_light(Yellow);
      traffic_light(Yellow);
-     _delay_ms(50000);
+     _delay_ms(TIME);
  
      pedestrian_light(Green);
      traffic_light(Red);
-    _delay_ms(50000);
+    _delay_ms(TIME);
     next_state = p_4;
     break;
 case p_3: // car yellow on
      pedestrian_light(Yellow);
      traffic_light(Yellow);
-     _delay_ms(50000);
+     _delay_ms(TIME);
  
      pedestrian_light(Green);
      traffic_light(Red);
-    _delay_ms(50000);
+    _delay_ms(TIME);
     next_state = p_4;
     break;
 case p_4: 

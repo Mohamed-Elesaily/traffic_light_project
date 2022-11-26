@@ -2,6 +2,7 @@
     "files.associations": {
         "gpio.h": "c",
         "types.h": "c",
-        "app.h": "c"
+        "app.h": "c",
+        "std_lib.h": "c"
     }
 }
