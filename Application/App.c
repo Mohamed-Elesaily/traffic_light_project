@@ -31,6 +31,7 @@ default:
 S_state = S_state_next;
 }
 void normal_state(){
+     uint8_t count = 0;
     switch (state)
 {
 case green:
@@ -46,8 +47,16 @@ case green:
     } 
     break;
 case yellow:
-    traffic_light(yellow);
-    _delay_ms(TIME);
+    while(count <10){
+   traffic_light(yellow);
+    _delay_ms(TIME/10);
+    count++;
+    if(button_s == Pressed){
+        count = 0;
+        break;
+    }
+    }
+ 
     if(prev_state == red){
         next_state = green; 
      
@@ -84,6 +93,7 @@ state = next_state;
 }
 
 void pedestrian_state(){
+uint8_t count = 0;
 switch (state)
 {
 case p_1: //car red one
@@ -94,9 +104,14 @@ case p_1: //car red one
 case p_2: // car green on
     pedestrian_light(Red);
      _delay_ms(TIME);
-     pedestrian_light(Yellow);
-     traffic_light(Yellow);
-     _delay_ms(TIME);
+    while(count <10){
+    traffic_light(yellow);
+    pedestrian_light(Yellow);
+    _delay_ms(TIME/10);
+    count++;
+    
+    }
+    count = 0;
  
      pedestrian_light(Green);
      traffic_light(Red);
@@ -104,10 +119,14 @@ case p_2: // car green on
     next_state = p_4;
     break;
 case p_3: // car yellow on
-     pedestrian_light(Yellow);
-     traffic_light(Yellow);
-     _delay_ms(TIME);
- 
+  while(count <10){
+    traffic_light(yellow);
+    pedestrian_light(Yellow);
+    _delay_ms(TIME/10);
+    count++;
+    
+    }
+    count = 0;
      pedestrian_light(Green);
      traffic_light(Red);
     _delay_ms(TIME);
@@ -144,7 +163,7 @@ void traffic_light(EN_traffic light){
         LED_off(Y_t);
         LED_off(R_t);
     }else if(light == Yellow){
-        LED_on(Y_t);
+        LED_toggle(Y_t);
         LED_off(G_t);
         LED_off(R_t);
     }else if(light == Red){
@@ -160,7 +179,7 @@ void pedestrian_light(EN_traffic light){
         LED_off(Y_d);
         LED_off(R_d);
     }else if(light == Yellow){
-        LED_on(Y_d);
+        LED_toggle(Y_d);
         LED_off(G_d);
         LED_off(R_d);
     }
